@@ -1,0 +1,88 @@
+﻿@page
+@model MDSServiceWebbApp.Pages.testModel
+@{
+}
+
+<!--<form method="post">
+    <div class="container">
+        <div class="form-group">
+            <button asp-page-handler="Seed" name="seed" type="submit" class="btn btn-primary">Seed</button>
+        </div>
+        <div class="form-group">
+            <button asp-page-handler="Test" name="test" type="submit" class="btn btn-primary">Test</button>
+        </div>
+    </div>
+</form>
+
+<hr />-->
+@*@if (Model.sqlDataList != null)
+    {
+        @foreach (var item in @Model.sqlDataList)
+        {
+            <div class="row">
+                <div class="col-3">
+                    <label>1: </label>@item.Data1
+                </div>
+                <div class="col-3">
+                    <label>2: </label>@item.Data2
+                </div>
+                <div class="col-3">
+                    <label>3: </label>@item.Data3
+                </div>
+            </div>
+        }
+    }*@
+
+
+<form method="post">
+    <div class="container">
+        <div class="form-group">
+            <button asp-page-handler="Seed" name="seed" type="submit" class="btn btn-primary">Seed</button>
+        </div>
+        <div class="form-group">
+            <button asp-page-handler="Test" name="test" type="submit" class="btn btn-primary">Test</button>
+        </div>
+        <div class="form-group">
+            <button asp-page-handler="AddPersoner" type="submit" class="btn btn-primary">Testa AddPersoner</button>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+@if (Model.person_Leafs != null)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <label>Namn: </label>
+            </div>
+            <div class="col-3">
+                <label>Förnamn: </label>
+            </div>
+            <div class="col-3">
+                <label>Efternamn: </label>
+            </div>
+            <div class="col-3">
+                <label>Personnummer: </label>
+            </div>
+        </div>
+        @foreach (var item in @Model.person_Leafs)
+        {
+        <div class="row">
+            <div class="col-3">
+                @item.Name
+            </div>
+            <div class="col-3">
+                @item.First_Name
+            </div>
+            <div class="col-3">
+                @item.Last_Name
+            </div>
+            <div class="col-3">
+                @item.Social_Security_Number
+            </div>
+        </div>
+        }
+    </div>
+}
